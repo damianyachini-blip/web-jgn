@@ -1,0 +1,2098 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Natalie Agois · JGN Asesoría Inmobiliaria · La asesora inmobiliaria de confianza para compradores e inversionistas en Miami, Panamá y Perú. Asesoría personalizada y criterio profesional." />
+  <meta name="theme-color" content="#06111f" />
+  <title>Natalie Agois · JGN Asesoría Inmobiliaria | Miami · Panamá · Perú</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+
+  <style>
+/* =========================================================
+   DESIGN TOKENS / VARIABLES
+========================================================= */
+:root {
+  --navy: #06111f;
+  --navy-2: #0a1c31;
+  --blue: #0f2d4b;
+  --black: #05070b;
+  --pearl: #f8f6f0;
+  --bone: #f3eadc;
+  --sand: #d7c2a1;
+  --beige: #c8ad7f;
+  --gold: #c9a452;
+  --gold-soft: #e8cc84;
+  --white: #ffffff;
+  --ink: #111827;
+  --muted: #6b7280;
+  --glass: rgba(255,255,255,.07);
+  --line: rgba(232,204,132,.22);
+  --shadow-premium: 0 28px 80px rgba(0,0,0,.35);
+  --radius-lg: 32px;
+  --radius-md: 22px;
+  --radius-sm: 14px;
+  --ff-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --ff-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --container: min(1200px, 90vw);
+  --section-py: clamp(3.5rem, 8vw, 7rem);
+}
+
+/* =========================================================
+   RESET / BASE
+========================================================= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--ff-sans);
+  background: var(--black);
+  color: var(--white);
+  line-height: 1.7;
+  font-size: 16px;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; height: auto; display: block; }
+ul, ol { list-style: none; }
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+/* =========================================================
+   GLOBAL COMPONENTS
+========================================================= */
+.container { width: var(--container); margin: 0 auto; }
+
+.eyebrow {
+  display: inline-block;
+  font-size: .7rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.eyebrow--gold { color: var(--gold-soft); }
+.eyebrow--ink { color: var(--gold); }
+
+.section-title {
+  font-family: var(--ff-serif);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -.02em;
+}
+.section-title--lg { font-size: clamp(1.8rem, 4.5vw, 3.2rem); }
+.section-title--md { font-size: clamp(1.5rem, 3.5vw, 2.4rem); }
+
+.section-text {
+  font-size: clamp(.92rem, 1.1vw, 1.05rem);
+  line-height: 1.85;
+  max-width: 680px;
+}
+.section-text--light { color: rgba(255,255,255,.65); }
+.section-text--dark { color: var(--muted); }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  border-radius: 999px;
+  padding: .85rem 1.6rem;
+  font-weight: 700;
+  font-size: .85rem;
+  letter-spacing: .03em;
+  transition: all .3s cubic-bezier(.4,0,.2,1);
+  cursor: pointer;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.btn--gold {
+  background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+  color: var(--navy);
+  box-shadow: 0 12px 40px rgba(201,164,82,.18);
+}
+.btn--gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 50px rgba(201,164,82,.32);
+}
+.btn--outline {
+  border-color: var(--line);
+  color: var(--gold-soft);
+  background: rgba(255,255,255,.04);
+}
+.btn--outline:hover {
+  background: rgba(232,204,132,.1);
+  border-color: rgba(232,204,132,.4);
+}
+.btn--dark {
+  background: var(--navy);
+  color: var(--gold-soft);
+  border: 1px solid var(--line);
+}
+.btn--dark:hover {
+  background: var(--navy-2);
+  transform: translateY(-2px);
+}
+.btn--white {
+  background: var(--white);
+  color: var(--navy);
+  box-shadow: 0 8px 30px rgba(0,0,0,.08);
+}
+.btn--white:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 40px rgba(0,0,0,.14);
+}
+
+.tag {
+  display: inline-block;
+  border: 1px solid var(--line);
+  color: var(--gold-soft);
+  background: rgba(255,255,255,.04);
+  border-radius: 999px;
+  padding: .4rem .85rem;
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .02em;
+}
+
+.section-dark {
+  background: var(--navy);
+  color: var(--white);
+}
+.section-dark-alt {
+  background: var(--navy-2);
+  color: var(--white);
+}
+.section-light {
+  background: var(--pearl);
+  color: var(--ink);
+}
+.section-light-alt {
+  background: var(--bone);
+  color: var(--ink);
+}
+
+.card {
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  transition: transform .35s cubic-bezier(.4,0,.2,1), box-shadow .35s ease;
+}
+.card:hover { transform: translateY(-4px); }
+
+.card--glass {
+  background: var(--glass);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.card--glass:hover { box-shadow: 0 20px 60px rgba(0,0,0,.3); }
+
+.card--light {
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 4px 24px rgba(0,0,0,.04);
+}
+.card--light:hover { box-shadow: 0 16px 48px rgba(0,0,0,.08); }
+
+.card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  font-size: 1.3rem;
+}
+.card-icon--gold {
+  background: linear-gradient(135deg, rgba(201,164,82,.15), rgba(232,204,132,.08));
+  border: 1px solid var(--line);
+  color: var(--gold-soft);
+}
+.card-icon--navy {
+  background: linear-gradient(135deg, var(--navy), var(--navy-2));
+  border: 1px solid var(--line);
+  color: var(--gold-soft);
+}
+
+.card-title {
+  font-family: var(--ff-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: .5rem;
+}
+
+.card-text {
+  font-size: .88rem;
+  line-height: 1.7;
+}
+
+.grid-2 { display: grid; gap: 1.5rem; }
+.grid-3 { display: grid; gap: 1.5rem; }
+
+.disclaimer {
+  font-size: .76rem;
+  line-height: 1.6;
+  opacity: .55;
+  margin-top: 2rem;
+  max-width: 700px;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(5,7,11,.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(232,204,132,.08);
+  transition: background .4s ease, box-shadow .4s ease, border-color .4s ease;
+}
+.header.is-scrolled {
+  background: rgba(5,7,11,.92);
+  box-shadow: 0 4px 30px rgba(0,0,0,.3);
+  border-bottom-color: rgba(232,204,132,.15);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+.brand-logo {
+  width: 120px;
+  height: auto;
+  flex-shrink: 0;
+}
+.brand-logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  /* Invierte a blanco en fondos oscuros, preservando forma y topología original */
+  filter: brightness(0) invert(1);
+}
+.brand-logo svg {
+  width: 100%;
+  height: 100%;
+}
+.brand-info span {
+  display: block;
+  font-size: .62rem;
+  color: rgba(255,255,255,.45);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-top: .15rem;
+}
+.nav-links {
+  display: none;
+  align-items: center;
+  gap: 1.8rem;
+}
+.nav-links a {
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: rgba(255,255,255,.6);
+  font-weight: 500;
+  transition: color .25s;
+}
+.nav-links a:hover { color: var(--gold-soft); }
+.nav-cta {
+  display: none;
+}
+.nav-cta .btn { padding: .6rem 1.2rem; font-size: .78rem; }
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 110;
+}
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--gold-soft);
+  border-radius: 2px;
+  transition: all .3s ease;
+}
+.menu-toggle.is-active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.menu-toggle.is-active span:nth-child(2) { opacity: 0; }
+.menu-toggle.is-active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* Mobile Nav Overlay */
+.mobile-nav {
+  position: fixed;
+  inset: 0;
+  background: rgba(5,7,11,.97);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .35s ease;
+}
+.mobile-nav.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+.mobile-nav a {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  color: rgba(255,255,255,.7);
+  font-weight: 600;
+  transition: color .25s;
+}
+.mobile-nav a:hover { color: var(--gold-soft); }
+.mobile-nav .btn { margin-top: 1rem; }
+
+/* =========================================================
+   HERO
+========================================================= */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 15% 20%, rgba(232,204,132,.1), transparent 40%),
+    radial-gradient(ellipse at 85% 10%, rgba(201,164,82,.08), transparent 35%),
+    radial-gradient(ellipse at 50% 80%, rgba(15,45,75,.4), transparent 50%),
+    linear-gradient(165deg, #03070d 0%, var(--navy) 40%, var(--navy-2) 100%);
+  padding-top: 70px;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: .035;
+  background-image:
+    linear-gradient(var(--gold) 1px, transparent 1px),
+    linear-gradient(90deg, var(--gold) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(to top, var(--navy), transparent);
+  pointer-events: none;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 3rem 0 4rem;
+}
+.hero-grid {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+.hero-text .eyebrow { margin-bottom: 1.2rem; }
+.hero h1 {
+  font-family: var(--ff-serif);
+  font-size: clamp(2rem, 5.5vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: -.03em;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+.hero h1 em {
+  color: var(--gold-soft);
+  font-style: italic;
+}
+.hero .lead {
+  font-size: clamp(.9rem, 1.2vw, 1.05rem);
+  color: rgba(255,255,255,.6);
+  max-width: 560px;
+  line-height: 1.85;
+  margin-bottom: 1.5rem;
+}
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-bottom: 2rem;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem;
+  margin-bottom: 1.2rem;
+}
+.hero-note {
+  font-size: .75rem;
+  color: rgba(255,255,255,.38);
+  max-width: 500px;
+  line-height: 1.65;
+}
+.hero-visual {
+  position: relative;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-float-card {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(232,204,132,.2);
+  box-shadow: var(--shadow-premium);
+  background: var(--glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.hero-card-miami {
+  width: 75%;
+  max-width: 320px;
+  padding: 0;
+  z-index: 2;
+}
+.hero-card-panama {
+  position: absolute;
+  bottom: -10px;
+  right: 0;
+  width: 55%;
+  max-width: 220px;
+  z-index: 3;
+}
+.hero-float-card .card-img-wrap {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--navy-2), var(--blue));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-card-panama .card-img-wrap { height: 120px; }
+.hero-float-card .card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-float-card .card-img-wrap .img-placeholder {
+  font-size: .7rem;
+  color: rgba(255,255,255,.25);
+  text-align: center;
+  padding: 1rem;
+}
+.hero-float-card .card-body {
+  padding: 1rem 1.2rem;
+}
+.hero-float-card .card-body h3 {
+  font-family: var(--ff-serif);
+  font-size: .95rem;
+  font-weight: 600;
+  margin-bottom: .3rem;
+}
+.hero-float-card .card-body p {
+  font-size: .72rem;
+  color: rgba(255,255,255,.5);
+}
+.hero-glow {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,164,82,.12), transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* =========================================================
+   TRUST STRIP
+========================================================= */
+.trust-strip {
+  background: linear-gradient(180deg, var(--navy), var(--navy-2));
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 1.8rem 0;
+  overflow: hidden;
+}
+.trust-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 2rem;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  font-size: .76rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.55);
+  white-space: nowrap;
+}
+.trust-item .trust-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   CONTENT SECTIONS
+========================================================= */
+.section-pad { padding: var(--section-py) 0; }
+
+.section-header {
+  margin-bottom: 2.5rem;
+}
+.section-header .section-title { margin-bottom: 1rem; }
+
+/* Natalie Intro - Light section */
+.natalie-grid {
+  display: grid;
+  gap: 2.5rem;
+}
+.natalie-photo-wrap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 16px 50px rgba(0,0,0,.06);
+  aspect-ratio: 3/4;
+  max-height: 480px;
+  background: linear-gradient(135deg, var(--bone), var(--sand));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.natalie-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.natalie-photo-wrap .img-placeholder {
+  font-size: .78rem;
+  color: var(--muted);
+  text-align: center;
+  padding: 2rem;
+}
+.natalie-text .section-text { margin-bottom: 1.5rem; }
+.natalie-cards { display: grid; gap: 1rem; }
+
+/* Why section cards */
+.why-cards { display: grid; gap: 1.2rem; margin-top: 2rem; }
+
+/* City opportunities */
+.city-block {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+.city-img-wrap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 16/10;
+  background: linear-gradient(135deg, var(--navy-2), var(--blue));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.city-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.city-img-wrap .img-placeholder {
+  font-size: .78rem;
+  color: rgba(255,255,255,.25);
+  text-align: center;
+  padding: 2rem;
+}
+.city-content .section-text { margin-bottom: 1.5rem; }
+.city-bullets {
+  margin-bottom: 2rem;
+}
+.city-bullets li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin-bottom: .6rem;
+  font-size: .9rem;
+  line-height: 1.7;
+}
+.city-bullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: .6rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+.section-light .city-bullets li { color: var(--muted); }
+.section-light .city-bullets li::before { background: var(--gold); }
+.section-dark-alt .city-bullets li { color: rgba(255,255,255,.6); }
+.section-dark-alt .city-bullets li::before { background: var(--gold-soft); }
+
+/* =========================================================
+   CARDS / PROJECTS
+========================================================= */
+.project-cards { display: grid; gap: 1.5rem; margin-top: 2rem; }
+
+.project-card {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.project-card:hover { transform: translateY(-4px); }
+
+.project-card--glass {
+  background: var(--glass);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.project-card--glass:hover { box-shadow: 0 20px 60px rgba(0,0,0,.3); }
+
+.project-card--light {
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 4px 24px rgba(0,0,0,.04);
+}
+.project-card--light:hover { box-shadow: 0 16px 48px rgba(0,0,0,.1); }
+
+.project-card-img {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--navy-2), var(--blue));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.project-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.project-card-img .img-placeholder {
+  font-size: .72rem;
+  color: rgba(255,255,255,.25);
+  text-align: center;
+  padding: 1rem;
+}
+.project-card-body {
+  padding: 1.5rem;
+}
+.project-card-body .card-eyebrow {
+  font-size: .65rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: .6rem;
+}
+.project-card--glass .card-eyebrow { color: var(--gold-soft); }
+.project-card--light .card-eyebrow { color: var(--gold); }
+
+.project-card-body h3 {
+  font-family: var(--ff-serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: .8rem;
+}
+.project-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+  margin-bottom: 1.2rem;
+}
+.project-card-meta span {
+  font-size: .82rem;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+.project-card--glass .project-card-meta span { color: rgba(255,255,255,.55); }
+.project-card--light .project-card-meta span { color: var(--muted); }
+
+.project-card-meta .meta-label {
+  font-weight: 600;
+  min-width: 80px;
+}
+.project-card--glass .meta-label { color: rgba(255,255,255,.75); }
+.project-card--light .meta-label { color: var(--ink); }
+
+/* =========================================================
+   HOL PORTFOLIO
+========================================================= */
+.hol-grid { display: grid; gap: 1.2rem; margin-top: 2rem; }
+
+.hol-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--glass);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.hol-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 50px rgba(0,0,0,.3);
+}
+.hol-card-img {
+  height: 180px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--navy-2), var(--blue));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hol-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hol-card-img .img-placeholder {
+  font-size: .7rem;
+  color: rgba(255,255,255,.25);
+  text-align: center;
+  padding: 1rem;
+}
+.hol-card-body {
+  padding: 1.2rem 1.4rem;
+}
+.hol-card-body h4 {
+  font-family: var(--ff-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: .3rem;
+}
+.hol-card-body .hol-location {
+  font-size: .75rem;
+  color: rgba(255,255,255,.45);
+  margin-bottom: .5rem;
+}
+.hol-card-body .hol-type {
+  font-size: .72rem;
+  color: var(--gold-soft);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-weight: 600;
+  margin-bottom: .4rem;
+}
+.hol-card-body .hol-price {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: .8rem;
+}
+.hol-private-block {
+  margin-top: 2.5rem;
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  background: rgba(201,164,82,.06);
+  border: 1px solid rgba(232,204,132,.15);
+}
+.hol-private-block p {
+  font-size: .88rem;
+  color: rgba(255,255,255,.55);
+  margin-bottom: 1.2rem;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   IDEAL CLIENT
+========================================================= */
+.client-cards { display: grid; gap: 1rem; margin-top: 2rem; }
+
+.client-card {
+  border-radius: var(--radius-md);
+  padding: 1.5rem 1.8rem;
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,.05);
+  box-shadow: 0 2px 16px rgba(0,0,0,.03);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.client-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 36px rgba(0,0,0,.08);
+}
+.client-card h4 {
+  font-family: var(--ff-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: .35rem;
+}
+.client-card p {
+  font-size: .85rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* =========================================================
+   ADVISORY PROCESS
+========================================================= */
+.process-steps { margin-top: 2.5rem; }
+
+.process-step {
+  display: flex;
+  gap: 1.2rem;
+  padding-bottom: 2rem;
+  position: relative;
+}
+.process-step:last-child { padding-bottom: 0; }
+.process-step::before {
+  content: '';
+  position: absolute;
+  left: 19px;
+  top: 42px;
+  bottom: 0;
+  width: 1px;
+  background: var(--line);
+}
+.process-step:last-child::before { display: none; }
+
+.step-number {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .8rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+  color: var(--navy);
+}
+.step-content h4 {
+  font-family: var(--ff-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: .3rem;
+}
+.step-content p {
+  font-size: .88rem;
+  color: rgba(255,255,255,.55);
+  line-height: 1.7;
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+.form-section {
+  background: var(--pearl);
+  color: var(--ink);
+}
+.form-wrap {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.form-grid {
+  display: grid;
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+.form-group { display: flex; flex-direction: column; gap: .4rem; }
+.form-group label {
+  font-size: .78rem;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: .03em;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: .85rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(0,0,0,.1);
+  background: var(--white);
+  color: var(--ink);
+  font-size: .9rem;
+  transition: border-color .25s, box-shadow .25s;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201,164,82,.12);
+}
+.form-group textarea { min-height: 100px; resize: vertical; }
+.form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' fill='none' stroke='%236b7280' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+.form-submit { margin-top: 1.5rem; }
+.form-submit .btn { width: 100%; padding: 1rem; font-size: .92rem; }
+.form-note {
+  font-size: .74rem;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+.final-cta {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(201,164,82,.1), transparent 50%),
+    linear-gradient(170deg, var(--black) 0%, var(--navy) 50%, var(--navy-2) 100%);
+  text-align: center;
+}
+.final-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: .025;
+  background-image:
+    linear-gradient(var(--gold) 1px, transparent 1px),
+    linear-gradient(90deg, var(--gold) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+}
+.final-cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+  margin: 0 auto;
+}
+.final-cta .section-title { margin-bottom: 1rem; }
+.final-cta .section-text {
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+.final-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .8rem;
+  margin-bottom: 2rem;
+}
+.final-cta .disclaimer {
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* =========================================================
+   FLOATING WHATSAPP
+========================================================= */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 90;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 24px rgba(37,211,102,.35);
+  transition: transform .3s ease, box-shadow .3s ease;
+  animation: wa-pulse 2.5s infinite;
+}
+.floating-whatsapp:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 36px rgba(37,211,102,.45);
+}
+.floating-whatsapp svg {
+  width: 30px;
+  height: 30px;
+  fill: var(--white);
+}
+@keyframes wa-pulse {
+  0%, 100% { box-shadow: 0 6px 24px rgba(37,211,102,.35); }
+  50% { box-shadow: 0 6px 24px rgba(37,211,102,.55), 0 0 0 12px rgba(37,211,102,.08); }
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+.footer {
+  background: var(--black);
+  border-top: 1px solid var(--line);
+  padding: 3rem 0 2rem;
+}
+.footer-grid {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.footer-brand .brand-logo {
+  width: 110px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+.footer-brand strong {
+  display: block;
+  font-size: .82rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-bottom: .15rem;
+}
+.footer-brand .footer-name {
+  font-size: .78rem;
+  color: var(--gold-soft);
+  margin-bottom: .8rem;
+}
+.footer-brand p {
+  font-size: .82rem;
+  color: rgba(255,255,255,.45);
+  max-width: 320px;
+  line-height: 1.65;
+}
+.footer-contact h4 {
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  color: var(--gold-soft);
+  margin-bottom: .8rem;
+  font-weight: 700;
+}
+.footer-contact a {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .85rem;
+  color: rgba(255,255,255,.55);
+  margin-bottom: .5rem;
+  transition: color .25s;
+}
+.footer-contact a:hover { color: var(--gold-soft); }
+.footer-contact .contact-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  opacity: .5;
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.06);
+  padding-top: 1.5rem;
+}
+.footer-disclaimer {
+  font-size: .72rem;
+  color: rgba(255,255,255,.3);
+  line-height: 1.65;
+  max-width: 700px;
+}
+.footer-copy {
+  font-size: .7rem;
+  color: rgba(255,255,255,.2);
+  margin-top: .8rem;
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .7s cubic-bezier(.4,0,.2,1), transform .7s cubic-bezier(.4,0,.2,1);
+}
+.reveal-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity .8s cubic-bezier(.4,0,.2,1), transform .8s cubic-bezier(.4,0,.2,1);
+}
+.reveal.is-visible,
+.reveal-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: .1s; }
+.reveal-delay-2 { transition-delay: .2s; }
+.reveal-delay-3 { transition-delay: .3s; }
+.reveal-delay-4 { transition-delay: .4s; }
+.reveal-delay-5 { transition-delay: .5s; }
+
+/* Hero float animation */
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.hero-card-miami { animation: float-gentle 6s ease-in-out infinite; }
+.hero-card-panama { animation: float-gentle 6s ease-in-out 1.5s infinite; }
+
+/* Gold line decoration */
+.gold-line {
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-soft));
+  margin-bottom: 1.5rem;
+  border-radius: 2px;
+}
+.gold-line--center { margin-left: auto; margin-right: auto; }
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+/* Tablet */
+@media (min-width: 640px) {
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .why-cards { grid-template-columns: repeat(2, 1fr); }
+  .client-cards { grid-template-columns: repeat(2, 1fr); }
+  .natalie-cards { grid-template-columns: repeat(3, 1fr); }
+  .project-cards { grid-template-columns: repeat(2, 1fr); }
+  .hol-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: repeat(2, 1fr); }
+  .form-row-2 { grid-template-columns: repeat(2, 1fr); display: grid; gap: 1.2rem; }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .nav-links { display: flex; }
+  .nav-cta { display: block; }
+  .menu-toggle { display: none; }
+
+  .header-inner { height: 80px; }
+
+  .hero { padding-top: 80px; }
+  .hero-grid { grid-template-columns: 1.1fr .9fr; gap: 4rem; }
+  .hero-content { padding: 5rem 0 6rem; }
+  .hero h1 { font-size: clamp(2.5rem, 4vw, 3.8rem); }
+
+  .natalie-grid { grid-template-columns: .4fr .6fr; gap: 4rem; }
+
+  .city-block { grid-template-columns: 1fr 1fr; gap: 4rem; }
+  .city-block--reverse .city-img-wrap { order: 2; }
+  .city-block--reverse .city-content { order: 1; }
+
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .project-cards { grid-template-columns: repeat(3, 1fr); }
+  .hol-grid { grid-template-columns: repeat(3, 1fr); }
+  .client-cards { grid-template-columns: repeat(3, 1fr); }
+
+  .footer-grid { grid-template-columns: 1.3fr 1fr; }
+}
+
+/* Large Desktop */
+@media (min-width: 1280px) {
+  :root { --container: min(1280px, 88vw); }
+  .hero h1 { font-size: 3.8rem; }
+}
+  </style>
+</head>
+<body>
+
+<!-- =========================================================
+  HEADER / NAVIGATION START
+========================================================= -->
+<header id="header" class="header">
+  <div class="container header-inner">
+    <a href="#hero-miami-panama" class="brand">
+      <div class="brand-logo">
+        <!-- IMAGE ORIGIN: Logo oficial JGN. Colocar en: assets/jgn-logo.png. filter:brightness(0) invert(1) solo cambia color a blanco sobre fondo oscuro — sin modificar forma ni topología -->
+        <img src="assets/jgn-logo.png" alt="JGN Asesoría Inmobiliaria" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <span class="logo-fallback" style="display:none;align-items:center;gap:.4rem;font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--white);">JGN <span style="font-weight:300;opacity:.6;">Asesoría</span></span>
+      </div>
+      <div class="brand-info">
+        <span>Natalie Agois · Miami · Panamá · Perú</span>
+      </div>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#miami-opportunities">Miami</a>
+      <a href="#panama-opportunities">Panamá</a>
+      <a href="#advisory-process">Asesoría</a>
+      <a href="#hol-portfolio-support">Portafolio</a>
+      <a href="#qualified-lead-form">Contacto</a>
+    </nav>
+
+    <div class="nav-cta">
+      <a href="https://wa.me/51998332017?text=Hola%20Natalie%2C%20vi%20la%20landing%20de%20JGN%20y%20quiero%20recibir%20informaci%C3%B3n%20sobre%20oportunidades%20inmobiliarias%20en%20Miami%20y%20Panam%C3%A1." target="_blank" rel="noopener" class="btn btn--gold">Solicitar asesoría</a>
+    </div>
+
+    <div class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#miami-opportunities" class="mobile-nav-link">Miami</a>
+  <a href="#panama-opportunities" class="mobile-nav-link">Panamá</a>
+  <a href="#advisory-process" class="mobile-nav-link">Asesoría</a>
+  <a href="#hol-portfolio-support" class="mobile-nav-link">Portafolio</a>
+  <a href="#qualified-lead-form" class="mobile-nav-link">Contacto</a>
+  <a href="https://wa.me/51998332017?text=Hola%20Natalie%2C%20vi%20la%20landing%20de%20JGN%20y%20quiero%20recibir%20informaci%C3%B3n%20sobre%20oportunidades%20inmobiliarias%20en%20Miami%20y%20Panam%C3%A1." target="_blank" rel="noopener" class="btn btn--gold">Solicitar asesoría</a>
+</div>
+<!-- =========================================================
+  HEADER / NAVIGATION END
+========================================================= -->
+
+
+<!-- =========================================================
+  SECTION 01 / HERO MIAMI PANAMA START
+========================================================= -->
+<section id="hero-miami-panama" class="hero">
+  <div class="container hero-content">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <span class="eyebrow eyebrow--gold reveal">Natalie Agois · Asesora inmobiliaria</span>
+        <h1 class="reveal reveal-delay-1">La asesora que necesitas para tu próxima decisión inmobiliaria en <em>Miami</em>, <em>Panamá</em> y <em>Perú</em>.</h1>
+        <p class="lead reveal reveal-delay-2">Acompaño a compradores e inversionistas que quieren evaluar propiedades con información clara, criterio profesional y atención directa. Sin presiones. Sin datos genéricos. Con seguimiento real.</p>
+        <div class="hero-tags reveal reveal-delay-2">
+          <span class="tag">Miami</span>
+          <span class="tag">Panamá</span>
+          <span class="tag">Inversión inmobiliaria</span>
+          <span class="tag">Segunda vivienda</span>
+          <span class="tag">Renta o diversificación patrimonial</span>
+          <span class="tag">Asesoría personalizada</span>
+        </div>
+        <div class="hero-actions reveal reveal-delay-3">
+          <a href="https://wa.me/51998332017?text=Hola%20Natalie%2C%20vi%20la%20landing%20de%20JGN%20y%20quiero%20recibir%20informaci%C3%B3n%20sobre%20oportunidades%20inmobiliarias%20en%20Miami%20y%20Panam%C3%A1." target="_blank" rel="noopener" class="btn btn--gold">Solicitar asesoría personalizada</a>
+          <a href="#why-miami-panama" class="btn btn--outline">Explorar oportunidades</a>
+        </div>
+        <p class="hero-note reveal reveal-delay-3">La información de proyectos, disponibilidad y condiciones comerciales se comparte bajo solicitud para mantener datos actualizados y conversaciones calificadas.</p>
+      </div>
+      <div class="hero-visual reveal reveal-delay-2">
+        <div class="hero-glow"></div>
+        <div class="hero-float-card hero-card-miami">
+          <div class="card-img-wrap">
+            <!-- IMAGE ORIGIN: placeholder. Replace with approved Miami skyline/lifestyle image -->
+            <div class="img-placeholder">Miami · Imagen pendiente</div>
+          </div>
+          <div class="card-body">
+            <h3>Miami</h3>
+            <p>Oportunidades para inversión y segunda vivienda</p>
+          </div>
+        </div>
+        <div class="hero-float-card hero-card-panama">
+          <div class="card-img-wrap">
+            <!-- IMAGE ORIGIN: placeholder. Replace with approved Panama skyline/lifestyle image -->
+            <div class="img-placeholder">Panamá</div>
+          </div>
+          <div class="card-body">
+            <h3>Panamá</h3>
+            <p>Proyectos con asesoría directa</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- =========================================================
+  SECTION 01 / HERO MIAMI PANAMA END
+========================================================= -->
+
+
+<!-- =========================================================
+  SECTION 02 / TRUST STRIP START
+========================================================= -->
+<section id="trust-strip" class="trust-strip">
+  <div class="container">
+    <div class="trust-items">
+      <div class="trust-item reveal"><span class="trust-dot"></span>Asesoría directa</div>
+      <div class="trust-item reveal reveal-delay-1"><span class="trust-dot"></span>Miami y Panamá</div>
+      <div class="trust-item reveal reveal-delay-2"><span class="trust-dot"></span>Compradores e inversionistas</div>
+      <div class="trust-item reveal reveal-delay-3"><span class="trust-dot"></span>Información bajo solicitud</div>
+      <div class="trust-item reveal reveal-delay-4"><span class="trust-dot"></span>WhatsApp personalizado</div>
+    </div>
+  </div>
+</section>
+<!-- =========================================================
+  SECTION 02 / TRUST STRIP END
+========================================================= -->
+
+
+<!-- =========================================================
+  SECTION 03 / NATALIE JGN INTRO START
+========================================================= -->
+<section id="natalie-jgn-intro" class="section-light section-pad">
+  <div class="container">
+    <div class="natalie-grid">
+      <div class="natalie-photo reveal">
+        <div class="natalie-photo-wrap">
+          <!-- IMAGE ORIGIN: placeholder. Replace with approved Natalie/JGN image -->
+          <img src="assets/natalie-placeholder.jpg" alt="Natalie Agois JGN Asesoría Inmobiliaria" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.img-placeholder').style.display='block';">
+          <div class="img-placeholder" style="display:none;">Natalie Agois · Foto pendiente</div>
+        </div>
+      </div>
+      <div class="natalie-text">
+        <div class="section-header reveal">
+          <span class="eyebrow eyebrow--ink">Natalie Agois · JGN</span>
+          <div class="gold-line"></div>
+          <h2 class="section-title section-title--md" style="color:var(--ink);">Una asesoría cercana, profesional y orientada a proteger tu decisión inmobiliaria.</h2>
+        </div>
+        <p class="section-text section-text--dark reveal reveal-delay-1">Soy Natalie Agois, asesora inmobiliaria. Acompaño a compradores e inversionistas que quieren tomar decisiones con información clara, criterio comercial y seguimiento personalizado.</p>
+        <p class="section-text section-text--dark reveal reveal-delay-2">Desde JGN Asesoría Inmobiliaria te ayudo a evaluar oportunidades en mercados seleccionados como Miami y Panamá, además de propiedades residenciales, comerciales y de playa en Lima y Asia (distrito de Lima, Perú), según tu perfil, presupuesto y objetivo.</p>
+        <div class="natalie-cards" style="margin-top:1.5rem;">
+          <div class="card card--light reveal reveal-delay-1">
+            <div class="card-icon card-icon--navy">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <h3 class="card-title" style="color:var(--ink);">Confianza</h3>
+            <p class="card-text" style="color:var(--muted);">Atención directa y seguimiento personalizado.</p>
+          </div>
+          <div class="card card--light reveal reveal-delay-2">
+            <div class="card-icon card-icon--navy">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h3 class="card-title" style="color:var(--ink);">Criterio</h3>
+            <p class="card-text" style="color:var(--muted);">Evaluación de oportunidades según perfil, presupuesto y objetivo.</p>
+          </div>
+          <div class="card card--light reveal reveal-delay-3">
+            <div class="card-icon card-icon--navy">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <h3 class="card-title" style="color:var(--ink);">Filtro profesional</h3>
+            <p class="card-text" style="color:var(--muted);">Información organizada antes de avanzar a una decisión.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- =========================================================
+  SECTION 03 / NATALIE JGN INTRO END
+========================================================= -->
+
+
+<!-- =========================================================
+  SECTION 04 / WHY MIAMI PANAMA START
+========================================================= -->
+<section id="why-miami-panama" class="section-dark section-pad">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center;">
+      <span class="eyebrow eyebrow--gold">Inversión internacional</span>
+      <div class="gold-line gold-line--center"></div>
+      <h2 class="section-title section-title--lg">¿Por qué evaluar oportunidades inmobiliarias en Miami y Panamá?</h2>
+    </div>
+    <p class="section-text section-text--light reveal reveal-delay-1" style="text-align:center;margin:0 auto 2rem;">Cada vez más compradores latinoamericanos buscan alternativas fuera de su mercado local para diversificar patrimonio, evaluar segunda vivienda o acceder a proyectos internacionales con acompañamiento profesional.</p>
+
+    <div class="why-cards">
+      <div class="card card--glass reveal reveal-delay-1">
+        <div class="card-icon card-icon--gold">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <h3 class="card-title">Diversificación patrimonial</h3>
+        <p class="card-text" style="color:rgba(255,255,255,.55);">Explora oportunidades fuera de Perú con una mirada ordenada y profesional.</p>
+      </div>
+      <div class="card card--glass reveal reveal-delay-2">
+        <div class="card-icon card-icon--gold">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3 class="card-title">Segunda vivienda</h3>
+        <p class="card-text" style="color:rgba(255,255,255,.55);">Evalúa alternativas para uso personal, familiar o estadías frecuentes.</p>
+      </div>
+      <div class="card card--glass reveal reveal-delay-3">
+        <div class="card-icon card-icon--gold">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3 class="card-title">Compra para renta</h3>
+        <p class="card-text" style="color:rgba(255,255,255,.55);">Analiza opciones pensadas para quienes compran con visión de mediano o largo plazo.</p>
+      </div>
+      <div class="card card--glass reveal reveal-delay-4">
+        <div class="card-icon card-icon--gold">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <h3 class="card-title">Asesoría antes de decidir</h3>
+        <p class="card-text" style="color:rgba(255,255,255,.55);">Recibe información clara antes de solicitar fichas, coordinar reuniones o avanzar comercialmente.</p>
+      </div>
+    </div>
+    <p class="disclaimer reveal" style="text-align:center;margin:2rem auto 0;">No se promete rentabilidad ni resultado financiero. Toda información debe validarse con ficha oficial, disponibilidad actualizada y condiciones comerciales vigentes.</p>
+  </div>
+</section>
+<!-- =========================================================
+  SECTION 04 / WHY MIAMI PANAMA END
+========================================================= -->
+
+
+<!-- =========================================================
+  SECTION 05 / MIAMI OPPORTUNITIES START
+========================================================= -->
+<section id="miami-opportunities" class="section-light section-pad">
+  <div class="container">
+    <div class="city-block">
+      <div class="city-img-wrap reveal">
+        <!-- IMAGE ORIGIN: placeholder. Replace with approved Miami project/render image -->
+        <img src="assets/miami-placeholder.jpg" alt="Oportunidades inmobiliarias en Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.img-placeholder').style.display='block';">
+        <div class="img-placeholder" style="display:none;">Miami · Imagen pendiente</div>
+      </div>
+      <div class="city-content">
+        <span class="eyebrow eyebrow--ink reveal">Miami</span>
+        <div class="gold-line reveal"></div>
+        <h2 class="section-title section-title--md reveal" style="color:var(--ink);">Oportunidades inmobiliarias en Miami para compradores e inversionistas.</h2>
+        <p class="section-text section-text--dark reveal reveal-delay-1">Miami es uno de los mercados más consultados por compradores latinoamericanos que buscan diversificar patrimonio, evaluar propiedades para renta, segunda vivienda o inversión internacional.</p>
+        <ul class="city-bullets reveal reveal-delay-2">
+          <li>Opciones residenciales o de inversión según perfil.</li>
+          <li>Evaluación de zonas, presupuesto y objetivo de compra.</li>
+          <li>Información comercial bajo solicitud.</li>
+          <li>Acompañamiento personalizado antes de avanzar.</li>
+        </ul>
+        <a href="https://wa.me/51998332017?text=Hola%20Natalie%2C%20vi%20la%20landing%20de%20JGN%20y%20quiero%20informaci%C3%B3n%20sobre%20oportunidades%20en%20Miami." target="_blank" rel="noopener" class="btn btn--dark reveal reveal-delay-3">Quiero información sobre Miami</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- =========================================================
+  SECTION 05 / MIAMI OPPORTUNITIES END
+========================================================= -->
+
+
+<!-- =========================================================
+  SECTION 06 / PANAMA OPPORTUNITIES START
+========================================================= -->
+<section id="panama-opportunities" class="section-dark-alt section-pad">
+  <div class="container">
+    <div class="city-block city-block--reverse">
+      <div class="city-content">
+        <span class="eyebrow eyebrow--gold reveal">Panamá</span>
+        <div class="gold-line reveal"></div>
+        <h2 class="section-title section-title--md reveal">Proyectos inmobiliarios en Panamá con asesoría personalizada.</h2>
+        <p class="section-text section-text--light reveal reveal-delay-1">Panamá ofrece alternativas para quienes buscan explorar inversión inmobiliaria internacional con distintos rangos de presupuesto, ubicaciones y formatos de propiedad.</p>
+        <ul class="city-bullets reveal reveal-delay-2">
+          <li>Proyectos seleccionados bajo solicitud.</li>
+          <li>Opciones para inversión, vivienda o diversificación patrimonial.</li>
+          <li>Revisión de información comercial disponible.</li>
+          <li>Seguimiento directo con Natalie.</li>
+        </ul>
+        <a href="https://wa.me/51998332017?text=Hola%20Natalie%2C%20vi%20la%20landing%20de%20JGN%20y%20quiero%20informaci%C3%B3n%20sobre%20proyectos%20en%20Panam%C3%A1." target="_blank" rel="noopener" class="btn btn--gold reveal reveal-delay-3">Quiero información sobre Panamá</a>
+      </div>
+      <div class="city-img-wrap reveal">
+        <!-- IMAGE ORIGIN: placeholder. Replace with approved Panama project/render image -->
+        <img src="assets/panama-placeholder.jpg" alt="Proyectos inmobiliarios en Panamá" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.img-placeholder').style.display='block';">
+        <div class="img-placeholder" style="display:none;">Panamá · Imagen pendiente</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- =========================================================
+  SECTION 06 / PANAMA OPPORTUNITIES END
+========================================================= -->
+
+
+<!-- =========================================================
+  SECTION 07 / INTERNATIONAL PLACEHOLDER PROJECTS START
+========================================================= -->
+<section id="international-placeholder-projects" class="section-light-alt section-pad">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center;">
+      <span class="eyebrow eyebrow--ink">Oportunidades seleccionadas</span>
+      <div class="gold-line gold-line--center"></div>
+      <h2 class="section-title section-title--md" style="color:var(--ink);">Recibe opciones alineadas a tu perfil de compra o inversión.</h2>
+    </div>
+    <p class="section-text section-text--dark reveal reveal-delay-1" style="text-align:center;margin:0 auto 2rem;">Las opciones de Miami y Panamá se presentan según tu objetivo, presupuesto, plazo y tipo de propiedad que estás buscando.</p>
+
+    <div class="project-cards">
+      <!-- MIAMI_PROJECT_01 -->
+      <div class="project-card project-card--light reveal reveal-delay-1">
+        <div class="project-card-img">
+          <!-- IMAGE ORIGIN: placeholder. Replace with MIAMI_PROJECT_01_IMAGE -->
+          <div class="img-placeholder"><!-- MIAMI_PROJECT_01_IMAGE -->Imagen pendiente</div>
+        </div>
+        <div class="project-card-body">
+          <span class="card-eyebrow">Miami · Proyecto residencial</span>
+          <!-- MIAMI_PROJECT_01_NAME -->
+          <h3 style="color:var(--ink);">Proyecto por confirmar</h3>
+          <div class="project-card-meta">
+            <!-- MIAMI_PROJECT_01_LOCATION -->
+            <span><span class="meta-label">Ubicación:</span> Por confirmar</span>
+            <!-- MIAMI_PROJECT_01_PRICE -->
+            <span><span class="meta-label">Precio desde:</span> Por confirmar</span>
+            <span><span class="meta-label">Tipo:</span> Por confirmar</span>
+          </div>
+          <a href="https://wa.me/51998332017?text=Hola%20Natalie%2C%20vi%20la%20landing%20de%20JGN%20y%20quiero%20informaci%C3%B3n%20sobre%20oportunidades%20en%20Miami." target="_blank" rel="noopener" class="btn btn--dark" style="width:100%;font-size:.82rem;">Solicitar información</a>
+        </div>
+      </div>
+
+      <!-- PANAMA_PROJECT_01 -->
+      <div class="project-card project-card--light reveal reveal-delay-2">
+        <div class="project-card-img">
+          <!-- IMAGE ORIGIN: placeholder. Replace with PANAMA_PROJECT_01_IMAGE -->
+          <div class="img-placeholder"><!-- PANAMA_PROJECT_01_IMAGE -->Imagen pendiente</div>
+        </div>
+        <div class="project-card-body">
+          <span class="card-eyebrow">Panamá · Proyecto urbano</span>
+          <!-- PANAMA_PROJECT_01_NAME -->
+          <h3 style="color:var(--ink);">Proyecto por confirmar</h3>
+          <div class="project-card-meta">
+            <!-- PANAMA_PROJECT_01_LOCATION -->
+            <span><span class="meta-label">Ubicación:</span> Por confirmar</span>
+            <!-- PANAMA_PROJECT_01_PRICE -->
+            <span><span class="meta-label">Precio desde:</span> Por confirmar</span>
+            <span><span class="meta-label">Tipo:</span> Por confirmar</span>
+          </div>
+          <a href="https://wa.me/51998332017?text=Hola%20Natalie%2C%20vi%20la%20landing%20de%20JGN%20y%20quiero%20informaci%C3%B3n%20sobre%20proyectos%20en%20Panam%C3%A1." target="_blank" rel="noopener" class="btn btn--dark" style="width:100%;font-size:.82rem;">Solicitar información</a>
+        </div>
+      </div>
+
+      <!-- MIXED PROJECT -->
+      <div class="project-card project-card--light reveal reveal-delay-3">
+        <div class="project-card-img">
+          <div class="img-placeholder">Imagen pendiente</div>
+        </div>
+        <div class="project-card-body">
+          <span class="card-eyebrow">Miami / Panamá · Alternativas de inversión</span>
+          <h3 style="color:var(--ink);">Opciones según perfil</h3>
+          <div class="project-card-meta">
+            <span><span class="meta-label">Ubicación:</span> Según perfil</span>
+            <span><span class="meta-label">Precio desde:</span> Bajo solicitud</span>
+            <span><span class="meta-label">Tipo:</span> Residencial / inversión / segunda vivienda</span>
+          </div>
+          <a href="https://wa.me/51998332017?text=Hola%20Natalie%2C%20vi%20la%20landing%20de%20JGN%20y%20quiero%20recibir%20informaci%C3%B3n%20sobre%20oportunidades%20inmobiliarias%20en%20Miami%20y%20Panam%C3%A1." target="_blank" rel="noopener" class="btn btn--dark" style="width:100%;font-size:.82rem;">Evaluar mi perfil</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- =========================================================
+  SECTION 07 / INTERNATIONAL PLACEHOLDER PROJECTS END
+========================================================= -->
+
+
+<!-- =========================================================
+  SECTION 08 / HOL PORTFOLIO SUPPORT START
+========================================================= -->
+<section id="hol-portfolio-support" class="section-dark section-pad">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center;">
+      <span class="eyebrow eyebrow--gold">Portafolio JGN</span>
+      <div class="gold-line gold-line--center"></div>
+      <h2 class="section-title section-title--md">Experiencia comercial con propiedades seleccionadas en Lima y Asia (Perú).</h2>
+    </div>
+    <p class="section-text section-text--light reveal reveal-delay-1" style="text-align:center;margin:0 auto .8rem;">Además de las oportunidades internacionales, JGN trabaja propiedades residenciales, activos comerciales, casas de playa, terrenos y operaciones de alto ticket en Lima, Miraflores, San Isidro, Surco y Asia (distrito de Lima).</p>
+    <p class="reveal reveal-delay-1" style="text-align:center;font-size:.82rem;color:rgba(255,255,255,.4);margin-bottom:2.5rem;">Esta selección funciona como respaldo de experiencia comercial. Para recibir la ficha completa de cada propiedad, solicita información por WhatsApp.</p>
+
+    <div class="hol-grid">
+
+      <!-- HOL Property 1: El Velero · Las Lagunas -->
+      <div class="hol-card reveal reveal-delay-1">
+        <div class="hol-card-img">
+          <!-- IMAGE ORIGIN: HOL / JGN portfolio. Do not replace with stock image. -->
+          <img src="assets/lagunas_3.jpg" alt="El Velero Las Lagunas La Molina" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.img-placeholder').style.display='block';">
+          <div class="img-placeholder" style="display:none;">El Velero · Las Lagunas</div>
+        </div>
+        <div class="hol-card-body">
+          <span class="hol-type">Residencial premium</span>
+          <h4>El Velero · Las Lagunas</h4>
+          <p class="hol-location">La Molina · Casa en condominio</p>
+          <p class="hol-price">USD 1,999,000</p>
+          <a href="https://wa.me/51998332017?text=Hola%20Natalie%2C%20vi%20la%20landing%20de%20JGN%20y%20quiero%20recibir%20informaci%C3%B3n%20sobre%20oportunidades%20inmobiliarias%20en%20Miami%20y%20Panam%C3%A1." target="_blank" rel="noopener" class="btn btn--outline" style="width:100%;font-size:.78rem;">Solicitar ficha privada</a>
+        </div>
+      </div>
+
+      <!-- HOL Property 2: Los Gavilanes -->
+      <div class="hol-card reveal reveal-delay-2">
+        <div class="hol-card-img">
+          <!-- IMAGE ORIGIN: HOL / JGN portfolio. Do not replace with stock image. -->
+          <img src="assets/hol_gavilanes.jpg" alt="Los Gavilanes San Isidro" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.img-placeholder').style.display='block';">
+          <div class="img-placeholder" style="display:none;">Los Gavilanes</div>
+        </div>
+        <div class="hol-card-body">
+          <span class="hol-type">Activo corporativo / inversión</span>
+          <h4>Los Gavilanes</h4>
+          <p class="hol-location">San Isidro · Propiedad comercial</p>
+          <p class="hol-price">USD 850,000</p>
+          <a href="https://wa.me/51998332017?text=Hola%20Natalie%2C%20vi%20la%20landing%20de%20JGN%20y%20quiero%20recibir%20informaci%C3%B3n%20sobre%20oportunidades%20inmobiliarias%20en%20Miami%20y%20Panam%C3%A1." target="_blank" rel="noopener" class="btn btn--outline" style="width:100%;font-size:.78rem;">Solicitar ficha</a>
+        </div>
+      </div>
+
+      <!-- HOL Property 3: Castilla la Vieja -->
+      <div class="hol-card reveal reveal-delay-3">
+        <div class="hol-card-img">
+          <!-- IMAGE ORIGIN: HOL / JGN portfolio. Do not replace with stock image. -->
+          <img src="assets/hol_castilla.jpg" alt="Castilla la Vieja Surco" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.img-placeholder').style.display='block';">
+          <div class="img-placeholder" style="display:none;">Castilla la Vieja</div>
+        </div>
+        <div class="hol-card-body">
+          <span class="hol-type">Opción funcional</span>
+          <h4>Castilla la Vieja</h4>
+          <p class="hol-location">Surco · Departamento</p>
+          <p class="hol-price">USD 209,000</p>
+          <a href="https://wa.me/51998332017?text=Hola%20Natalie%2C%20vi%20la%20landing%20de%20JGN%20y%20quiero%20recibir%20informaci%C3%B3n%20sobre%20oportunidades%20inmobiliarias%20en%20Miami%20y%20Panam%C3%A1." target="_blank" rel="noopener" class="btn btn--outline" style="width:100%;font-size:.78rem;">Pedir fotos y visita</a>
+        </div>
+      </div>
+
+      <!-- HOL Property 4: Condominio Miraflores -->
+      <div class="hol-card reveal reveal-delay-1">
+        <div class="hol-card-img">
+          <!-- IMAGE ORIGIN: HOL / JGN portfolio. Do not replace with stock image. -->
+          <img src="assets/hol_miraflores.jpg" alt="Condominio Miraflores" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.img-placeholder').style.display='block';">
+          <div class="img-placeholder" style="display:none;">Condominio Miraflores</div>
+        </div>
+        <div class="hol-card-body">
+          <span class="hol-type">Vida urbana y privacidad</span>
+          <h4>Condominio Miraflores</h4>
+          <p class="hol-location">Enrique del Horme 218 · Miraflores · Casa en condominio</p>
+          <p class="hol-price">USD 542,000</p>
+          <a href="https://wa.me/51998332017?text=Hola%20Natalie%2C%20vi%20la%20landing%20de%20JGN%20y%20quiero%20recibir%20informaci%C3%B3n%20sobre%20oportunidades%20inmobiliarias%20en%20Miami%20y%20Panam%C3%A1." target="_blank" rel="noopener" class="btn btn--outline" style="width:100%;font-size:.78rem;">Consultar disponibilidad</a>
+        </div>
+      </div>
+
+      <!-- HOL Property 5: Oficina Av. Benavides -->
+      <div class="hol-card reveal reveal-delay-2">
+        <div class="hol-card-img">
+          <!-- IMAGE ORIGIN: HOL / JGN portfolio. Do not replace with stock image. -->
+          <img src="assets/hol_benavides.jpg" alt="Oficina Av. Benavides 768" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.img-placeholder').style.display='block';">
+          <div class="img-placeholder" style="display:none;">Oficina Benavides</div>
+        </div>
+        <div class="hol-card-body">
+          <span class="hol-type">Uso corporativo / inversión</span>
+          <h4>Oficina Av. Benavides 768</h4>
+          <p class="hol-location">Av. Benavides · Oficina</p>
+          <p class="hol-price">USD 470,000</p>
+          <a href="https://wa.me/51998332017?text=Hola%20Natalie%2C%20vi%20la%20landing%20de%20JGN%20y%20quiero%20recibir%20informaci%C3%B3n%20sobre%20oportunidades%20inmobiliarias%20en%20Miami%20y%20Panam%C3%A1." target="_blank" rel="noopener" class="btn btn--outline" style="width:100%;font-size:.78rem;">Solicitar ficha</a>
+        </div>
+      </div>
+
+      <!-- HOL Property 6: Casa de playa Cocoa -->
+      <div class="hol-card reveal reveal-delay-3">
+        <div class="hol-card-img">
+          <!-- IMAGE ORIGIN: HOL / JGN portfolio. Do not replace with stock image. -->
+          <img src="assets/hol_asia_cocoa.jpg" alt="Casa de playa Cocoa Asia Lima Peru" loading="lazy" onerror="this.style.display='none';this.parentElement.querySelector('.img-placeholder').style.display='block';">
+          <div class="img-placeholder" style="display:none;">Casa de playa Cocoa</div>
+        </div>
+        <div class="hol-card-body">
+          <span class="hol-type">Segunda vivienda / uso familiar</span>
+          <h4>Casa de playa · Cocoa</h4>
+          <p class="hol-location">Asia, Lima (Perú) · Casa de playa</p>
+          <p class="hol-price">USD 395,000</p>
+          <a href="https://wa.me/51998332017?text=Hola%20Natalie%2C%20vi%20la%20landing%20de%20JGN%20y%20quiero%20recibir%20informaci%C3%B3n%20sobre%20oportunidades%20inmobiliarias%20en%20Miami%20y%20Panam%C3%A1." target="_blank" rel="noopener" class="btn btn--outline" style="width:100%;font-size:.78rem;">Pedir fotos completas</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- High-ticket private block -->
+    <div class="hol-private-block reveal">
+      <p>También contamos con activos de alto ticket y terrenos de desarrollo disponibles bajo conversación privada para desarrolladores, fondos, constructoras y family offices.</p>
+      <a href="https://wa.me/51998332017?text=Hola%20Natalie%2C%20vi%20la%20landing%20de%20JGN%20y%20quiero%20recibir%20informaci%C3%B3n%20sobre%20oportunidades%20inmobiliarias%20en%20Miami%20y%20Panam%C3%A1." target="_blank" rel="noopener" class="btn btn--outline">Solicitar contacto privado</a>
+    </div>
+  </div>
+</section>
+<!-- =========================================================
+  SECTION 08 / HOL PORTFOLIO SUPPORT END
+========================================================= -->
+
+
+<!-- =========================================================
+  SECTION 09 / IDEAL CLIENT PROFILE START
+========================================================= -->
+<section id="ideal-client-profile" class="section-light section-pad">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center;">
+      <span class="eyebrow eyebrow--ink">Para quién es esta asesoría</span>
+      <div class="gold-line gold-line--center"></div>
+      <h2 class="section-title section-title--md" style="color:var(--ink);">Esta experiencia es para ti si quieres avanzar con información clara.</h2>
+    </div>
+
+    <div class="client-cards">
+      <div class="client-card reveal reveal-delay-1">
+        <h4>Quieres invertir fuera de Perú</h4>
+        <p>Estás evaluando Miami o Panamá y necesitas entender opciones reales antes de avanzar.</p>
+      </div>
+      <div class="client-card reveal reveal-delay-2">
+        <h4>Buscas segunda vivienda</h4>
+        <p>Quieres revisar alternativas para uso familiar, temporadas o estadías frecuentes.</p>
+      </div>
+      <div class="client-card reveal reveal-delay-3">
+        <h4>Buscas comprar para renta</h4>
+        <p>Te interesa analizar opciones con potencial de uso o alquiler, sin promesas de rentabilidad.</p>
+      </div>
+      <div class="client-card reveal reveal-delay-1">
+        <h4>Quieres comparar mercados</h4>
+        <p>Necesitas orientación para entender diferencias entre Miami, Panamá y otras alternativas inmobiliarias.</p>
+      </div>
+      <div class="client-card reveal reveal-delay-2">
+        <h4>Tienes un presupuesto definido</h4>
+        <p>Quieres recibir opciones alineadas a tu rango y no perder tiempo con información genérica.</p>
+      </div>
+      <div class="client-card reveal reveal-delay-3">
+        <h4>Estás explorando</h4>
+        <p>Todavía no estás listo para comprar, pero quieres ordenar criterios antes de tomar una decisión.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- =========================================================
+  SECTION 09 / IDEAL CLIENT PROFILE END
+========================================================= -->
+
+
+<!-- =========================================================
+  SECTION 10 / ADVISORY PROCESS START
+========================================================= -->
+<section id="advisory-process" class="section-dark-alt section-pad">
+  <div class="container">
+    <div class="section-header reveal" style="max-width:600px;">
+      <span class="eyebrow eyebrow--gold">Proceso privado</span>
+      <div class="gold-line"></div>
+      <h2 class="section-title section-title--md">Un proceso simple para avanzar con criterio.</h2>
+    </div>
+
+    <div class="process-steps">
+      <div class="process-step reveal reveal-delay-1">
+        <span class="step-number">1</span>
+        <div class="step-content">
+          <h4>Cuéntanos qué estás buscando</h4>
+          <p>Miami, Panamá o ambos. Inversión, vivienda, renta o exploración.</p>
+        </div>
+      </div>
+      <div class="process-step reveal reveal-delay-2">
+        <span class="step-number">2</span>
+        <div class="step-content">
+          <h4>Revisamos tu perfil</h4>
+          <p>Presupuesto, plazo, objetivo, ciudad de interés y nivel de decisión.</p>
+        </div>
+      </div>
+      <div class="process-step reveal reveal-delay-3">
+        <span class="step-number">3</span>
+        <div class="step-content">
+          <h4>Filtramos oportunidades</h4>
+          <p>Te presentamos información alineada a tu perfil, sin saturarte con opciones irrelevantes.</p>
+        </div>
+      </div>
+      <div class="process-step reveal reveal-delay-4">
+        <span class="step-number">4</span>
+        <div class="step-content">
+          <h4>Compartimos fichas y próximos pasos</h4>
+          <p>Recibes información comercial, disponibilidad y condiciones bajo solicitud.</p>
+        </div>
+      </div>
+      <div class="process-step reveal reveal-delay-5">
+        <span class="step-number">5</span>
+        <div class="step-content">
+          <h4>Acompañamiento personalizado</h4>
+          <p>Natalie te acompaña en la conversación, dudas y siguiente paso comercial.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- =========================================================
+  SECTION 10 / ADVISORY PROCESS END
+========================================================= -->
+
+
+<!-- =========================================================
+  SECTION 11 / QUALIFIED LEAD FORM START
+========================================================= -->
+<section id="qualified-lead-form" class="form-section section-pad">
+  <div class="container">
+    <div class="form-wrap">
+      <div class="section-header reveal" style="text-align:center;">
+        <span class="eyebrow eyebrow--ink">Solicita información</span>
+        <div class="gold-line gold-line--center"></div>
+        <h2 class="section-title section-title--md" style="color:var(--ink);">Recibe orientación personalizada sobre Miami y Panamá.</h2>
+      </div>
+      <p class="section-text section-text--dark reveal reveal-delay-1" style="text-align:center;margin:0 auto 2rem;">Completa tus datos y Natalie te contactará para entender qué estás buscando y compartirte información alineada a tu perfil.</p>
+
+      <!-- TODO: Connect form to backend, CRM, Formspree, Netlify Forms or email provider before publishing -->
+      <form action="FORM_ACTION_PENDING" method="POST" class="form-grid reveal reveal-delay-2" id="leadForm">
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="form-name">Nombre y apellido</label>
+            <input type="text" id="form-name" name="name" placeholder="Tu nombre completo" required />
+          </div>
+          <div class="form-group">
+            <label for="form-whatsapp">WhatsApp</label>
+            <input type="tel" id="form-whatsapp" name="whatsapp" placeholder="+51 999 999 999" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="form-email">Email</label>
+          <input type="email" id="form-email" name="email" placeholder="tu@email.com" required />
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="form-interest">Estoy interesado en</label>
+            <select id="form-interest" name="interest" required>
+              <option value="" disabled selected>Selecciona una opción</option>
+              <option value="Miami">Miami</option>
+              <option value="Panamá">Panamá</option>
+              <option value="Ambos">Ambos</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="form-objective">Objetivo</label>
+            <select id="form-objective" name="objective" required>
+              <option value="" disabled selected>Selecciona tu objetivo</option>
+              <option value="Invertir">Invertir</option>
+              <option value="Comprar para vivir">Comprar para vivir</option>
+              <option value="Comprar para renta">Comprar para renta</option>
+              <option value="Segunda vivienda">Segunda vivienda</option>
+              <option value="Explorar opciones">Explorar opciones</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="form-budget">Presupuesto aproximado</label>
+            <select id="form-budget" name="budget">
+              <option value="" disabled selected>Selecciona un rango</option>
+              <option value="Hasta USD 200K">Hasta USD 200K</option>
+              <option value="USD 200K - 500K">USD 200K - 500K</option>
+              <option value="USD 500K - 1M">USD 500K - 1M</option>
+              <option value="USD 1M+">USD 1M+</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="form-timeline">Plazo estimado</label>
+            <select id="form-timeline" name="timeline">
+              <option value="" disabled selected>Selecciona un plazo</option>
+              <option value="Inmediato">Inmediato</option>
+              <option value="1 a 3 meses">1 a 3 meses</option>
+              <option value="3 a 6 meses">3 a 6 meses</option>
+              <option value="Solo estoy evaluando">Solo estoy evaluando</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="form-message">Mensaje adicional</label>
+          <textarea id="form-message" name="message" placeholder="Cuéntanos brevemente qué estás buscando..." rows="3"></textarea>
+        </div>
+
+        <div class="form-submit">
+          <button type="submit" class="btn btn--gold">Solicitar información personalizada</button>
+        </div>
+        <p class="form-note">La información enviada será utilizada únicamente para responder tu consulta inmobiliaria.</p>
+      </form>
+    </div>
+  </div>
+</section>
+<!-- =========================================================
+  SECTION 11 / QUALIFIED LEAD FORM END
+========================================================= -->
+
+
+<!-- =========================================================
+  SECTION 12 / FINAL CTA START
+========================================================= -->
+<section id="final-cta" class="final-cta section-pad">
+  <div class="container">
+    <div class="final-cta-content reveal">
+      <h2 class="section-title section-title--lg" style="margin-bottom:1rem;">Conversemos sobre tu próxima decisión inmobiliaria.</h2>
+      <p class="section-text section-text--light" style="text-align:center;margin:0 auto 2rem;">Si estás evaluando Miami, Panamá o una propiedad específica del portafolio JGN, puedes escribir directamente por WhatsApp. La primera conversación sirve para entender tu objetivo, presupuesto y tipo de oportunidad que estás buscando.</p>
+      <div class="final-cta-actions">
+        <a href="https://wa.me/51998332017?text=Hola%20Natalie%2C%20vi%20la%20landing%20de%20JGN%20y%20quiero%20recibir%20informaci%C3%B3n%20sobre%20oportunidades%20inmobiliarias%20en%20Miami%20y%20Panam%C3%A1." target="_blank" rel="noopener" class="btn btn--gold">Escribir por WhatsApp</a>
+        <a href="#qualified-lead-form" class="btn btn--outline">Completar formulario</a>
+      </div>
+      <p class="disclaimer">La información presentada es referencial y puede variar según disponibilidad, condiciones comerciales y actualización de cada proyecto. La asesoría no garantiza rentabilidad, aprobación, compra ni cierre de operación.</p>
+    </div>
+  </div>
+</section>
+<!-- =========================================================
+  SECTION 12 / FINAL CTA END
+========================================================= -->
+
+
+<!-- =========================================================
+  FLOATING WHATSAPP BUTTON START
+========================================================= -->
+<a
+  id="floating-whatsapp"
+  class="floating-whatsapp"
+  href="https://wa.me/51998332017?text=Hola%20Natalie%2C%20vi%20la%20landing%20de%20JGN%20y%20quiero%20recibir%20informaci%C3%B3n%20sobre%20oportunidades%20inmobiliarias%20en%20Miami%20y%20Panam%C3%A1."
+  target="_blank"
+  rel="noopener"
+  aria-label="Hablar por WhatsApp con Natalie"
+>
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16.004 2.002c-7.732 0-14.002 6.27-14.002 14.002 0 2.468.656 4.876 1.9 6.988L2 30l7.193-1.864A13.94 13.94 0 0 0 16.004 30c7.732 0 14.002-6.27 14.002-14.002S23.736 2.002 16.004 2.002zm0 25.604a11.59 11.59 0 0 1-5.91-1.618l-.424-.252-4.395 1.152 1.174-4.293-.276-.44a11.58 11.58 0 0 1-1.777-6.153c0-6.404 5.212-11.608 11.608-11.608 6.404 0 11.608 5.204 11.608 11.608 0 6.396-5.204 11.604-11.608 11.604zm6.364-8.696c-.348-.176-2.068-1.02-2.388-1.136-.32-.116-.552-.176-.784.176-.232.348-.9 1.136-1.104 1.368-.204.232-.404.26-.752.088-.348-.176-1.468-.54-2.796-1.72-1.032-.92-1.728-2.056-1.932-2.404-.204-.348-.02-.536.152-.708.156-.156.348-.404.52-.608.176-.204.232-.348.348-.58.116-.232.06-.436-.028-.608-.088-.176-.784-1.892-1.076-2.592-.284-.68-.572-.588-.784-.6h-.668c-.232 0-.608.088-.924.436-.32.348-1.216 1.188-1.216 2.896s1.244 3.36 1.42 3.592c.176.232 2.448 3.736 5.932 5.24.828.356 1.476.572 1.98.728.832.264 1.588.228 2.188.14.668-.1 2.068-.844 2.36-1.66.292-.82.292-1.52.204-1.664-.088-.148-.32-.232-.668-.408z"/>
+  </svg>
+</a>
+<!-- =========================================================
+  FLOATING WHATSAPP BUTTON END
+========================================================= -->
+
+
+<!-- =========================================================
+  FOOTER START
+========================================================= -->
+<footer id="footer" class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand-logo">
+          <!-- IMAGE ORIGIN: Logo oficial JGN. Colocar en: assets/jgn-logo.png. filter:brightness(0) invert(1) solo cambia color a blanco sobre fondo oscuro — sin modificar forma ni topología -->
+          <img src="assets/jgn-logo.png" alt="JGN Asesoría Inmobiliaria" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <span class="logo-fallback" style="display:none;align-items:center;gap:.4rem;font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);">JGN <span style="font-weight:300;opacity:.6;">Asesoría</span></span>
+        </div>
+        <p class="footer-name">Natalie Agois</p>
+        <p>Asesoría inmobiliaria para compradores, propietarios e inversionistas en Lima, Asia (Perú), Panamá y Miami.</p>
+      </div>
+      <div class="footer-contact">
+        <h4>Contacto</h4>
+        <a href="https://jgnrealestate.com" target="_blank" rel="noopener">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          jgnrealestate.com
+        </a>
+        <a href="https://wa.me/51998332017" target="_blank" rel="noopener">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +51 998 332 017
+        </a>
+        <a href="mailto:nati.agois@gmail.com">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          nati.agois@gmail.com
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-disclaimer">La información presentada es referencial y puede variar según disponibilidad, condiciones comerciales y actualización de cada proyecto. La asesoría no garantiza rentabilidad, aprobación, compra ni cierre de operación.</p>
+      <p class="footer-copy">&copy; 2026 JGN Asesoría Inmobiliaria. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+<!-- =========================================================
+  FOOTER END
+========================================================= -->
+
+
+<!-- =========================================================
+  JAVASCRIPT START
+========================================================= -->
+<script>
+(function() {
+  'use strict';
+
+  // 1. IntersectionObserver for reveal animations
+  var revealElements = document.querySelectorAll('.reveal, .reveal-up');
+  if ('IntersectionObserver' in window) {
+    var revealObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.08,
+      rootMargin: '0px 0px -40px 0px'
+    });
+    revealElements.forEach(function(el) {
+      revealObserver.observe(el);
+    });
+  } else {
+    revealElements.forEach(function(el) {
+      el.classList.add('is-visible');
+    });
+  }
+
+  // 2. Header scroll effect
+  var header = document.getElementById('header');
+  var scrollThreshold = 60;
+  function handleHeaderScroll() {
+    if (window.scrollY > scrollThreshold) {
+      header.classList.add('is-scrolled');
+    } else {
+      header.classList.remove('is-scrolled');
+    }
+  }
+  window.addEventListener('scroll', handleHeaderScroll, { passive: true });
+  handleHeaderScroll();
+
+  // 3. Mobile menu toggle
+  var menuToggle = document.getElementById('menuToggle');
+  var mobileNav = document.getElementById('mobileNav');
+  var mobileNavLinks = mobileNav.querySelectorAll('a');
+
+  menuToggle.addEventListener('click', function() {
+    menuToggle.classList.toggle('is-active');
+    mobileNav.classList.toggle('is-open');
+    document.body.style.overflow = mobileNav.classList.contains('is-open') ? 'hidden' : '';
+  });
+
+  mobileNavLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+      menuToggle.classList.remove('is-active');
+      mobileNav.classList.remove('is-open');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // 4. Smooth scroll for internal anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      var targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      var target = document.querySelector(targetId);
+      if (target) {
+        e.preventDefault();
+        var headerHeight = header.offsetHeight;
+        var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 10;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  // 5. Hide floating WhatsApp when near the form to prevent overlap on mobile
+  var floatingWA = document.getElementById('floating-whatsapp');
+  var formSection = document.getElementById('qualified-lead-form');
+  if (floatingWA && formSection) {
+    var formObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && window.innerWidth < 768) {
+          floatingWA.style.opacity = '0';
+          floatingWA.style.pointerEvents = 'none';
+        } else {
+          floatingWA.style.opacity = '1';
+          floatingWA.style.pointerEvents = 'auto';
+        }
+      });
+    }, { threshold: 0.3 });
+    formObserver.observe(formSection);
+  }
+})();
+</script>
+<!-- =========================================================
+  JAVASCRIPT END
+========================================================= -->
+
+</body>
+</html>
