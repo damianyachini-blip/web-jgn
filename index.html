@@ -274,30 +274,26 @@
       gap: .75rem;
     }
     .brand-logo {
-      width: auto;
-      height: 46px;
-      max-height: 46px;
       flex-shrink: 0;
       display: flex;
       align-items: center;
+      justify-content: center;
+    }
+    .header .brand-logo {
+      width: 44px;
+      height: 44px;
+      max-height: 44px;
       overflow: hidden;
     }
-    .brand-logo img {
+    .header .brand-logo img {
       width: auto;
-      height: 46px;
-      max-height: 46px;
+      height: 44px;
+      max-height: 44px;
       object-fit: contain;
       filter: none;
     }
     .logo-fallback {
-      display: inline-flex;
-      align-items: center;
-      gap: .4rem;
-      font-size: .78rem;
-      font-weight: 800;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--white);
+      display: none;
     }
     .brand-info span {
       display: block;
@@ -912,16 +908,16 @@
       margin-bottom: 2rem;
     }
     .footer-brand .brand-logo {
-      width: auto;
-      height: 70px;
-      max-height: 70px;
+      width: 74px;
+      height: 74px;
+      max-height: 74px;
       margin-bottom: 1rem;
       overflow: hidden;
     }
     .footer-brand .brand-logo img {
       width: auto;
-      height: 70px;
-      max-height: 70px;
+      height: 74px;
+      max-height: 74px;
       object-fit: contain;
       filter: none;
     }
@@ -1047,26 +1043,30 @@
       .hero-actions, .final-cta-actions { width: 100%; }
       .floating-whatsapp { width: 54px; height: 54px; bottom: 18px; right: 18px; }
       .brand-info { display: none; }
-      .brand-logo {
-        width: auto;
-        height: 38px;
-        max-height: 38px;
+      .header .brand-logo {
+        width: 40px;
+        height: 40px;
+        max-height: 40px;
       }
-      .brand-logo img {
+      .header .brand-logo img {
         width: auto;
-        height: 38px;
-        max-height: 38px;
+        height: 40px;
+        max-height: 40px;
+        filter: none;
+      }
+      .footer-brand .brand-logo {
+        width: 66px;
+        height: 66px;
+        max-height: 66px;
+      }
+      .footer-brand .brand-logo img {
+        width: auto;
+        height: 66px;
+        max-height: 66px;
+        filter: none;
       }
       .card { padding: 1.4rem; }
       .project-card-body, .hol-card-body { padding: 1.2rem; }
-      .footer-brand .brand-logo {
-        height: 58px;
-        max-height: 58px;
-      }
-      .footer-brand .brand-logo img {
-        height: 58px;
-        max-height: 58px;
-      }
     }
   </style>
 </head>
