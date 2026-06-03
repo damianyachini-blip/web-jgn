@@ -274,18 +274,20 @@
       gap: .75rem;
     }
     .brand-logo {
-      width: 120px;
-      min-height: 34px;
-      height: auto;
+      width: auto;
+      height: 46px;
+      max-height: 46px;
       flex-shrink: 0;
       display: flex;
       align-items: center;
+      overflow: hidden;
     }
     .brand-logo img {
-      width: 100%;
-      height: auto;
+      width: auto;
+      height: 46px;
+      max-height: 46px;
       object-fit: contain;
-      filter: brightness(0) invert(1);
+      filter: none;
     }
     .logo-fallback {
       display: inline-flex;
@@ -910,9 +912,18 @@
       margin-bottom: 2rem;
     }
     .footer-brand .brand-logo {
-      width: 110px;
-      height: auto;
+      width: auto;
+      height: 70px;
+      max-height: 70px;
       margin-bottom: 1rem;
+      overflow: hidden;
+    }
+    .footer-brand .brand-logo img {
+      width: auto;
+      height: 70px;
+      max-height: 70px;
+      object-fit: contain;
+      filter: none;
     }
     .footer-brand strong {
       display: block;
@@ -1037,18 +1048,25 @@
       .floating-whatsapp { width: 54px; height: 54px; bottom: 18px; right: 18px; }
       .brand-info { display: none; }
       .brand-logo {
-  width: auto;
-  height: 42px;
-  max-height: 42px;
-}
-
-.brand-logo img {
-  width: auto;
-  height: 42px;
-  max-height: 42px;
-}
+        width: auto;
+        height: 38px;
+        max-height: 38px;
+      }
+      .brand-logo img {
+        width: auto;
+        height: 38px;
+        max-height: 38px;
+      }
       .card { padding: 1.4rem; }
       .project-card-body, .hol-card-body { padding: 1.2rem; }
+      .footer-brand .brand-logo {
+        height: 58px;
+        max-height: 58px;
+      }
+      .footer-brand .brand-logo img {
+        height: 58px;
+        max-height: 58px;
+      }
     }
   </style>
 </head>
@@ -1058,9 +1076,7 @@
     <div class="container header-inner">
       <a href="#hero-panama-miami" class="brand">
         <div class="brand-logo">
-          <!-- Pegar aquí URL del logo JGN -->
           <img src="logo-jgn-gold-header.png" alt="JGN Asesoría Inmobiliaria" />
-          <span class="logo-fallback">JGN <span style="font-weight:300;opacity:.6;">Asesoría</span></span>
         </div>
         <div class="brand-info">
           <span>Natalie Agois · Panamá · Miami · Perú</span>
@@ -1655,9 +1671,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="brand-logo">
-            <!-- Pegar aquí URL del logo JGN -->
             <img src="logo-jgn-gold-footer.png" alt="JGN Asesoría Inmobiliaria" loading="lazy">
-            <span class="logo-fallback">JGN <span style="font-weight:300;opacity:.6;">Asesoría</span></span>
           </div>
           <strong>JGN Asesoría</strong>
           <div class="footer-name">Natalie Agois</div>
